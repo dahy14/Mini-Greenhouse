@@ -2,22 +2,16 @@
 
 #define SOIL_SENSOR1 A0
 #define SOIL_SENSOR2 A1
-
+#define VALVE 11
+        
 void setup() {
   Serial.begin(115200);
-
+  //pinMode(VALVE, OUTPUT);
+  //digitalWrite(VALVE, HIGH);
 }
 
 void loop() {
-  const int threshold_wet = 1;
-  const int threshold_dry = 700;
-
-  int moisture_level = read_soil_moisture(SOIL_SENSOR1, SOIL_SENSOR2, threshold_dry, threshold_wet);
-  Serial.print("Soil Moisture Level: ");
-  Serial.println(moisture_level);
-
-  // Water pump
-  control_water_valve(moisture_level, threshold_dry, threshold_wet);
-
+  
+  control_water_valve(SOIL_SENSOR1, SOIL_SENSOR2, VALVE);
   delay(1000);
 }
