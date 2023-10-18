@@ -1,4 +1,9 @@
+/*****************************************************
+ * name:Humiture Detection 
+ * function:you can see the current value of humidity and temperature displayed on the I2C LCD1602.
+ ******************************************************/
 
+//include the libraries
 #include "humidity_function.h"
 
 dht DHT; 
