@@ -13,5 +13,4 @@ void setup() {
 void loop() {
   
   control_water_valve(SOIL_SENSOR1, SOIL_SENSOR2, VALVE);
-  delay(1000);
 }

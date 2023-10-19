@@ -7,23 +7,18 @@
 //
 // Released to the public domain
 //
-#include "humidty_function.h"
+
 #include <dht.h>
 
-
-dht DHT
+dht DHT;
 
 #define DHT11_PIN 2
-#define MISTMAKER 6
+
 
 void setup()
 {
   Serial.begin(115200);
-  Serial.println("DHT TEST PROGRAM ");
-  Serial.print("LIBRARY VERSION: ");
-  Serial.println(DHT_LIB_VERSION);
-  Serial.println();
-  Serial.println("Type,\tstatus,\tHumidity (%),\tTemperature (C)");
+
 }
 
 void loop()
