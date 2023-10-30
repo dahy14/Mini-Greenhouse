@@ -1,0 +1,1 @@
+Ang need lang na irefactor dito is 'yong conditionals and mga parameter na tatanggapin. HAyaan lang 'yong c_cpp_properties
