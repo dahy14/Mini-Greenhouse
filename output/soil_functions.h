@@ -3,7 +3,7 @@
 
 // Code Here
 
-void control_water_valve(int soil_sensor1, int soil_sensor2, int pin_valve, int dry = 900, int wet = 250,
-                         int thresh_dry = 30, int thresh_wet = 60);
+void setup_moisture_control(int valve_pin, int soil_sensor1, int soil_sensor2); // Valve 
+void read_moisture_control_valve(int valve_pin, int soil_sensor1, int soil_sensor2);
 
 #endif
