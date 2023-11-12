@@ -17,9 +17,9 @@
 dht DHT; 
 Servo servo;
 
-int thresh_low = 30;
+int thresh_low = 50;
 // get the readings, change the values to open the roof, 
-int thresh_high = 55;
+int thresh_high = 70;
 
 int i =0;
 bool isOpen = false; 
