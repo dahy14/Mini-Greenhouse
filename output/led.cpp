@@ -7,18 +7,17 @@ const int LDR_BRIGHT_THRESHOLD = 30;
 const int LED_MAX_VALUE = 1023;
 unsigned long LED_DELAY = 800;
 
-void control_LED(int setup_LED, int setup_LDR, int LDR_BRIGHT_THRESHOLD) {
+void control_LED(int setup_LED, int setup_LDR) {
     pinMode(setup_LED, OUTPUT);
-    int LDR = read_LDR(setup_LDR);
-    int brightness = map(LDR, 0, LED_MAX_VALUE, 100, 0);
-
+    int LDR = digitalRead(setup_LED);
+    Serial.println(LDR);
     unsigned long time_now = millis();
     if (time_now - prev_time_led >= LED_DELAY) {
-        if (brightness < LDR_BRIGHT_THRESHOLD) {
-            Serial.println("Lumos");
+        if (LDR == 1) {
+            // Serial.println("Lumos");
             digitalWrite(setup_LED, HIGH);
         } else {
-            Serial.println("Nox");
+            // Serial.println("Nox");
             digitalWrite(setup_LED, LOW);
         }
       
@@ -26,5 +25,3 @@ void control_LED(int setup_LED, int setup_LDR, int LDR_BRIGHT_THRESHOLD) {
     }
 }
 
-
-int read_LDR(int setup_LDR) { return analogRead(setup_LDR); }
