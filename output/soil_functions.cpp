@@ -28,15 +28,15 @@ void read_moisture_control_valve(int valve_pin, int soil_sensor1,
 
     if (time_now - prev_time_soil_sensor >= SOIL_SENSOR_DELAY) {
         if (moisture_level < DRY_THRESHOLD) {
-            // Serial.println("The soil is dry :(");
-            digitalWrite(valve_pin, HIGH);
+           // Serial.println("The soil is dry :(");
+           digitalWrite(valve_pin, HIGH);
         } else if ((moisture_level >= DRY_THRESHOLD) &&
                    (moisture_level <= WET_THRESHOLD)) {
-            // Serial.println("Perfect <3");
+            //Serial.println("Perfect <3");
             digitalWrite(valve_pin, LOW);
 
         } else {
-            // Serial.println("The soil is too wet shet");
+            //Serial.println("The soil is too wet shet");
             digitalWrite(valve_pin, LOW);
         }
 
